@@ -1,8 +1,5 @@
 
 
-
-
-
 import React, { useState, useEffect } from 'react';
 import SearchInfo from './search';
 
@@ -15,7 +12,7 @@ const CountryInfo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://restcountries.com/v3.1/all');
+        const response = await fetch(`https://restcountries.com/v3.1/all?search=${searchTerm}`);
         const data = await response.json();
         setCountriesData(data);
       } catch (error) {
@@ -24,7 +21,7 @@ const CountryInfo = () => {
     };
 
     fetchData();
-  }, []);
+  }, [searchTerm]);
 
   const filteredCountries = searchTerm
     ? countriesData.filter(country => {
@@ -48,19 +45,19 @@ const CountryInfo = () => {
 
   return (
     <div>
-      <h1>Countries Information</h1>
+      <h1 style={{ textAlign: 'center' }}>Countries Information</h1>
       <SearchInfo onSearchChange={setSearchTerm} />
       <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
         {currentItems.map((country, index) => (
-          <li key={index} style={{ flex: '0 0 30%', marginBottom: '20px', padding: '10px', border: '1px solid #ccc' }}>
-            <img src={country.flags.svg} alt={`${country.name.common} flag`} style={{ width: '100%', height: 'auto' }} />
-            <h2>{country.name.official}</h2>
-            <p>Capital: {country.capital}</p>
-            <p>Common Name: {country.name.common}</p>
+          <li key={index} style={{ flex: '0 0 30%', marginBottom: '20px', padding: '10px', border: '1px solid #ccc', textAlign: 'center' }}>
+            <img src={country.flags.svg} alt={`${country.name.common} flag`} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
+            <h2 style={{ margin: '10px 0' }}>{country.name.official}</h2>
+            <p style={{ margin: '0' }}>Common Name: {country.name.common}</p>
+            <p style={{ margin: '0' }}>Capital: {country.capital}</p>
           </li>
         ))}
       </ul>
-      <div>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
         {currentPage > 1 && (
           <button onClick={prevPage}>Previous</button>
         )}
