@@ -18,3 +18,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
    ```bash
    git clone https://github.com/ashu7982/Countries
+
+2. Deployed Link:
+
+       https://precious-cocada-11587d.netlify.app/
