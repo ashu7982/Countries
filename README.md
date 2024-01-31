@@ -1,7 +1,7 @@
 
 # Country Information App
 
-This React app allows users to explore country information, search by currency, and implements debouncing for a smoother search experience. It utilizes the [restcountries.com API](https://restcountries.com/v3.1/all) to fetch country data.
+This React app allows users to explore country information, search by currency, and implement debouncing for a smoother search experience. It utilizes the [restcountries.com API](https://restcountries.com/v3.1/all) to fetch country data.
 
 ## Features
 
@@ -17,4 +17,4 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/country-information-app.git
+   git clone https://github.com/ashu7982/Countries
